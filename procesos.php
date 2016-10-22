@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
  <html>
    <meta charset="utf-8">
@@ -22,6 +23,11 @@
              <li><a href="aduanas.php"><i class="material-icons left">language</i>Aduanas</a></li>
              <li><a href="procesos.php"><i class="material-icons left">work</i>Procesos</a></li>
              <li><a href="contactoIndex.php"><i class="material-icons left">phone</i>Contacto</a></li>
+             <?php if(isset($_SESSION['usuario'])):  ?>
+             <li><i><a href="login/cerrar.php">Cerrar sesion</a></i></li>
+             <?php else:  ?>
+             <li><a href="login">Iniciar sesion</a></li>
+             <?php endif ?>
 
            </ul>
            <ul class="side-nav" id="mobile-demo">
@@ -29,6 +35,9 @@
              <li><a href="aduanas.php">Aduanas</a></li>
              <li><a href="procesos.php">Procesos</a></li>
              <li><a href="contactoIndex.php">Contacto</a></li>
+
+             
+
            </ul>
        </div>
    </nav>
